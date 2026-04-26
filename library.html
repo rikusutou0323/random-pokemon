@@ -414,13 +414,8 @@
   const keyInput = document.getElementById('apikey-input');
   const keyStatus = document.getElementById('apikey-status');
 
-  const DEFAULT_KEY = '0670bd3bb95d9bffe1011531b093623d';
-
   function loadKey() {
-    if (!localStorage.getItem('calil_appkey')) {
-      localStorage.setItem('calil_appkey', DEFAULT_KEY);
-    }
-    const k = localStorage.getItem('calil_appkey');
+    const k = localStorage.getItem('calil_appkey') || '';
     keyInput.value = k;
     updateKeyStatus(k);
   }
